@@ -1,1 +1,2 @@
-l=[1,2,2,3,4]
+a=int(input('enter a name:'))
+b=int(input('enter a number: '))

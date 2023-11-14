@@ -18,12 +18,14 @@ class DB:
             querry = "create table {} ({})".format(table_name,fields)
         
             cur.execute(querry)
+            
             DB.con.close()
 
        
        
 
     def insert_into_table(self,table_name,*args):
+        DB.con
         field = ""
         for i in args:
             field = field + str(i) + ","
@@ -31,8 +33,9 @@ class DB:
         field = field[:len(field)-1]
         insert_querry = "insert into {} values {}".format(table_name,field)
         print(insert_querry)
-        cursor = con.cursor()
-        cursor.execute(insert_querry)
+        
+        cur.execute(insert_querry)
+        DB.con.commit()
         DB.con.close()
     
 
@@ -45,6 +48,7 @@ class DB:
         uodated_querry = "update {} set {} =".format(table_name,col_name)
         print(uodated_querry)
         print(type(value))
-        #cur.execute(uodated_querry+value)
+        cur.execute(uodated_querry+value)
         DB.con.close()
+        DB.con.commit()
          

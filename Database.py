@@ -18,6 +18,7 @@ class DB:
             querry = "create table {} ({})".format(table_name,fields)
         
             cur.execute(querry)
+            DB.con.close()
 
        
        
@@ -32,15 +33,18 @@ class DB:
         print(insert_querry)
         cursor = con.cursor()
         cursor.execute(insert_querry)
+        DB.con.close()
     
 
     def deleting_table(self,table_name):
          querry = "drop table {}".format(table_name)
          cur.execute(querry)
+         DB.con.close()
     
     def updating_table(self,table_name,col_name,value):
         uodated_querry = "update {} set {} =".format(table_name,col_name)
         print(uodated_querry)
         print(type(value))
         #cur.execute(uodated_querry+value)
+        DB.con.close()
          

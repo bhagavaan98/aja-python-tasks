@@ -1,10 +1,7 @@
-class Start:
-    def __init__(self,age,place):
-        self.age= age
-        self.place= place
+class Practice:
+    def __init__(self,name,age):
+        pass
     def get(self):
-        print('I do not understand oops')
-a=Start(18,'hyderabad')
-Start.get(19)
-print(a.age)
-print(a.place)
+       return name,age
+a=Practice()
+print(a.get('raju',20))

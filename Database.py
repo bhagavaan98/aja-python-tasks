@@ -18,11 +18,17 @@ class DB:
     def __enter__(self):
          
         self.db_connection()
-        return
+        print("database connetcion is started")
+        return self
+    
+    def db_commit(self):
+         self.con.commit()
     
     def __exit__(self,*args,**kwargs):
+         self.db_commit()
          self.cur.close()
          self.con.close()
+         print("Transaction is completed and commited connection is closed")
          
 
     def creating_table(self,table_name,**kwra):
@@ -35,7 +41,7 @@ class DB:
             querry = "create table {} ({})".format(table_name,fields)
          
             self.cur.execute(querry)
-        
+            print("Table is created......")
            
        
        
@@ -48,9 +54,10 @@ class DB:
         
         field = field[:len(field)-1]
         insert_querry = "insert into {} values {}".format(table_name,field)
-        print(insert_querry)
+        
         
         self.cur.execute(insert_querry)
+        print("insert query is excuted.......")
        
     
 
@@ -59,9 +66,10 @@ class DB:
          self.cur.execute(querry)
          
     
-    def updating_table(self,table_name,col_name,value):
-        uodated_querry = "update {} set {} =".format(table_name,col_name)
+    def updating_table(self,table_name,querry):
+        #uodated_querry = "update {} set {} =".format(table_name,col_name)
         
         
-        self.cur.execute(uodated_querry+value)
+        self.cur.execute(querry)
+        print("updated querry is executed......")
         

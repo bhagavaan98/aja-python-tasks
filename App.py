@@ -19,3 +19,6 @@ with DB("root","Lucky@143","mysql") as v1:
 # 
 
 # v1.updating_table("student","name","raju")
+
+
+class A

@@ -5,6 +5,7 @@ class Model:
         self.username = username 
         self.password = password 
         self.database = databse 
+        
     
     def db_connection(self):
         self.cun = pymysql.connect(user=self.username,password=self.password,database=self.database)

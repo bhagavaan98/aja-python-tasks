@@ -79,10 +79,10 @@ print(str(yards)+"yards")
 
 #6.Take the size of your hard disk in GB Show that in MB, KB, TB, PB 
 GB=int(input())
-MB=GB/1000
-KB=MB/1000
-TB=GB*1000
-PB=TB*1000
+MB=GB*1000
+KB=MB*1000
+TB=GB/1000
+PB=TB/1000
 print(MB)
 print(KB)
 print(TB)

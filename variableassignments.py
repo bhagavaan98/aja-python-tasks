@@ -100,11 +100,9 @@ Note: make sure that no space between : and a value and should be space after â€
 ''''
 
 name=input()
-age=int(input())
-height=int(input())
-print("name:"+name)
-print("Age:"+str(age))
-print("height:"+str(height))
+age=input()
+height=input()
+print("The details of the person: "+"Name:"+name+", "+"Age:"+str(age)+", "+"Height:"+str(height))
 
 
 # In[ ]:
@@ -113,7 +111,7 @@ print("height:"+str(height))
 #8.BMI calculation: take required parameters for BMI calculation from the user and calculate BMI of the person. 
 weight=int(input())
 height=int(input())
-BMI=weight/height
+BMI=weight/((height)**2)
 print(BMI)
 
 
@@ -155,9 +153,7 @@ print(b)
 
 
 #11. take base and exponent value from the user and print like in mathematics: example: base=2, exponent=3: 23 
-base=int(input())
-exponent=int(input())
-print(base**exponent)
+print(f'2\u00b3')
 
 
 # In[ ]:
@@ -180,7 +176,7 @@ a=int(input())
 if a==0:
     print(a or 10 )
 else:
-    print("Not ten"
+    print("Not ten")
 
 
 # In[ ]:
@@ -308,9 +304,9 @@ print("enter below options\n 1.kids\n 2.Men's\n 3.women's")
 a=int(input())
 if a==1:
     print("you are a kid")
-if a==2:
+elif a==2:
     print("you are a gentlemen")
-if a==3:
+elif a==3:
     print("you are a good women")
 
 
@@ -342,9 +338,9 @@ b=int(input())
 c=int(input())
 if a>b and a>c:
     print(a)
-if b>a and b>c:
+elif b>a and b>c:
     print(b)
-if c>a and c>b:
+else:
     print(c)
 
 

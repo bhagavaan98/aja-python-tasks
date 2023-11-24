@@ -105,13 +105,13 @@ height=input()
 print("The details of the person: "+"Name:"+name+", "+"Age:"+str(age)+", "+"Height:"+str(height))
 
 
-# In[ ]:
+# In[1]:
 
 
 #8.BMI calculation: take required parameters for BMI calculation from the user and calculate BMI of the person. 
 weight=int(input())
 height=int(input())
-BMI=weight/((height)**2)
+BMI=weight/((height**2))
 print(BMI)
 
 
@@ -149,7 +149,7 @@ b=a.lower()
 print(b)
 
 
-# In[ ]:
+# In[2]:
 
 
 #11. take base and exponent value from the user and print like in mathematics: example: base=2, exponent=3: 23 
@@ -168,7 +168,7 @@ print(max(a))
 print(min(a))
 
 
-# In[ ]:
+# In[5]:
 
 
 ##13Assign “ten” value to variable it is 10 otherwise assign “Not ten”  Note: write two versions of program  Version1: use and operator  Version2: use or operator  
@@ -266,13 +266,13 @@ b=int(input())
 c=int(input("enter an option for add=1,sub=2,mul=3,div=4,quit=5"))
 if c==1:
     print(a+b)
-if c==2:    
+elif c==2:    
     print(abs(a-b))
-if c==3:
+elif c==3:
     print(a*b)
-if c==4:
+elif c==4:
     print(a/b)
-if c==5:
+elif c==5:
     print("quit")
     
 
@@ -359,7 +359,7 @@ else:
 # In[11]:
 
 
-''''' Take an age  and gender from the user: and mention that what he/she can 	do in india. 
+''''' 22 Take an age  and gender from the user: and mention that what he/she can 	do in india. 
 
 """ 
 
@@ -416,7 +416,7 @@ if (gender=="1" or gender=="2") and ((age>=18) and (age<=60)):
 # In[13]:
 
 
-''''operating systems: 
+''''23 operating systems: 
 
 1.windows 
 
@@ -439,11 +439,11 @@ If the user enters other than 1 or 2 or 3 then show "There is only three floors,
 user=int(input("enter below options \n 1.windows\n 2.android \n 3.mac \n"))
 if user==1:
     print("Goto first floor and buy windows laptop or mobile")
-if user==2:
+elif user==2:
     print("Goto second floor and buy android mobiles")
-if user==3:
+elif user==3:
     print("Goto third floor and buy mac laptop or iphones")
-if user>3:
+elif user>3:
     print("There is only three floors,please select 1 or 2 or 3")
 
 
@@ -829,7 +829,7 @@ n=list(map(int,input().split()))
 print(max(n))
 
 
-# In[12]:
+# In[54]:
 
 
 #48. find out the index of  third occurrence of given substring (apple apple orange guava apple,apple,output 5)
@@ -920,14 +920,685 @@ source_string=input()
 destination_string=input()
 count=0
 for i in range(len(actual_string)):
-    if source_string[i]==actual_string:
+    if source_string==actual_string[i]:
         count=count+1
         result=i 
-        
+actual_string[result]=destination_string
+res=""
+for i in actual_string:
+    res=res+i+" "
+print(res)    
+
+
+# In[3]:
+
+
+''' 54. Take a two numbers from the user and do below menu driven operations 
+
+1. addition 
+
+2. multiples 
+
+3.division 
+
+4.sqrt 
+
+5. pow    a**b 
+
+6.subtraction   
+
+After selection do the corresponding operation. 
+
+Note: user may give int, or float numbers. 
+You should check whether it is proper digits or not. 
+I.e the user given string should be in the position to convert to float. 
+Other wise show the “inproper string given” Error. 
+'''
+n1 = float(input("Enter a number"))
+n2 = float(input("Enter a number"))
+print("\t Select an option\n1.Add\n2.Sub\n3.Multi\n4.Div\n5.power\n6.sqrt")
+user = int(input("Enter your option:- "))
+
+if user == 1:
+    print(n1+n2)
+elif user == 2:
+    print(n1-n2)
+elif user == 3:
+    print(n1*n2)
+elif user == 4:
+    print(n1/n2)
+elif user == 5:
+    print(n1**n2)
+elif user == 6:
+    print(n1,'=',n1**0.5)
+    print(n2,'=',n2**0.5)
+
+else:
+    print("Enter proper option")    
+
+
+# In[1]:
+
+
+#55.Take numbers from the user and find out min, maximum, sum, average 
+a=list(map(int,input().split()))
+sum=0
+print(min(a))
+print(max(a))
+for i in a:
+    sum=sum+i
+print(sum)
+print(sum/len(a))
+
+
+# In[8]:
+
+
+# 56.l=[1,2,3,5,7,8,9,10,11,12,13,20,22,23,24,25,26,27,20,21,22,4] 
+# find out how many even numbers are there and how many odd numbers are there and 
+# how many positive numbers are there and how many negative numbers are there and 
+# how many prime numbers are there and
+# how many perfect numbers are there and 
+# how many Armstrong numbers are there and 
+# how many palindrome numbers are there. 
+n=list(map(int,input().split()))
+new=[]
+news=[]
+even=0
+odd=0
+positive=0
+negative=0
+count=0
+counts=0
+for i in n:
+    if (i%2==0) and (i>0):
+        even=even+1
+    if i>0:
+        positive=positive+1
+    if i<0:
+        negative=negative+1 
+    if ((i%2)!=0) and (i>0):
+        odd=odd+1 
+print(f'The no of even numbers are:{even}')
+print(f'The no of odd numbers are:{odd}')
+print(f'The no of positive numbers are:{positive}')
+print(f'The no of negative numbers are:{negative}')
+for i in n:
+    factors=0
+    for j in range(2,i):
+        if (i%j==0):
+            factors=factors+1 
+    if factors==0 and i>0:
+        new.append(i)
+sum=0        
+for i in new:
+    sum=sum+1
+print(f'The no of prime numbers are:{sum}') 
+for i in n:
+    perfect=0
+    for j in range(1,i):
+        if (i%j==0):
+            perfect=perfect+j
+    news.append(perfect)
+for i in range(len(n)):
+    if n[i]==news[i]:
+        counts=counts+1
+print(f'The no of perfect numbers are:{counts}') 
+for i in n:
+    i=str(i)
+    res=0
+    a=len(i)
+    for j in range(int(a)):
+        b=i[j]
+        print(b)
+        #res=res+b
+#print(res)        
+
+
+# In[11]:
+
+
+#57.Take a string from the user and find out how many digits are there, 
+#how many special symbols are there, how many small letters are there, how many caps are there. 
+user=input()
+count=0
+small=0
+caps=0
+special_symbols=0
+for i in user:
+    if i.isdigit():
+        count=count+1
+    elif (i>="a" and i<="z"):
+        small=small+1
+    elif (i>="A" and i<="Z"):
+        caps=caps+1
+    else:
+        special_symbols=special_symbols+1 
+print(f'The no of digits are: {count}')
+print(f'The no of small are: {small}')
+print(f'The no of capita_letters are: {caps}')
+print(f'The no of special_symbols are: {special_symbols}')
+
+
+# In[12]:
+
+
+#58.Take a char from the user and find out how many number of occurrences are there in given string
+user=input()
+char=input()
+count=0
+for i in user:
+    if i==char:
+        count=count+1
+print(count)        
+
+
+# In[15]:
+
+
+#59.Take a element from the user and find out how many times the  element occurred in given list
+
+#example i have took :The end of the day is not same as the previous day:day:output is 2
+user=input().split()
+element=input()
+count=0
+for i in user:
+    if i==element:
+        count=count+1
+print(count)    
+
+
+# In[17]:
+
+
+#60.Take an element from the user and find out how many number of occurrences are there in given tuple 
+a=input().split()
+element=input()
+b=tuple(a)
+count=0
+for i in b:
+    if i==element:
+        count=count+1
+print(count) 
+
+
+# In[2]:
+
+
+#61. Reverse the string
+#without effecting the special symbols. It involves three variations. Write code for three variations.
+#62.Input: abc123,#$45def6%$^789$%^, output: $%^987%$^6fed54,#$321cba 
+a="abc123,#$45def6%$^789$%^"
+
+
+# In[3]:
+
+
+#63.abc123,#$45def6%$^789$%^, output: 9876fe,#$d54321%$^cba$%^
+
+
+# In[5]:
+
+
+#64.Inout: "123,#$456%$^789$%^", Output: 321,#$654%$^987$%^  Only numbers has to reverse. 
+
+
+# # Functions 
+
+# In[5]:
+
+
+#65. define a function to take person details name and age are mandatory parameters and height weight are optional parameters. 
+#If the user willing to pass any other details(like adhar, cell, pan, passport etc..) 
+#regarding him then your function should access those details. 
+def user_details(name,age,height=0,weight=0,*args):
+    print(name,age,height,weight,args)
+
+user_details("john",20)
 
 
 # In[ ]:
 
 
-#54
+#65a. rewrite above assignments by functions. Can use string functions to solve the string related assignments 
+
+
+# In[14]:
+
+
+# 65b. write a function to check given value is even or not.
+def even(n):
+    if n%2==0:
+        return "it is even"
+    return "it is not even"
+n=int(input())
+result=even(n)
+print(result)
+
+
+# In[21]:
+
+
+#65c. write a function to check given value is prime or not 
+def prime(n):
+    factors=0
+    for i in range(2,n):
+        if n%i==0:
+            factors=factors+1
+    if factors==0 and n!=1:
+        return "prime"
+    else:
+        return "not prime"
+n=int(input())
+result=prime(n)
+print(result)
+
+
+# In[24]:
+
+
+#65d.write a function to check given 2 values are  divisible or not 
+def divisible(m,n):
+    if m%n==0:
+        return "m is divisible by n"
+    else:
+        return "m is not divisible by n"
+m=int(input())
+n=int(input())
+result=divisible(m,n)
+print(result)
+
+
+# # STRINGS
+
+# In[26]:
+
+
+#67. take a string from the user and check contains only digits or not? 
+user=input()
+count=0
+for i in user:
+    if i.isalpha():
+        count=count+1
+if count==0:
+    print("The string contains only digits")
+else:
+    print("The string does not contains only digits")
+        
+
+
+# In[29]:
+
+
+#68. take a string from the user and check contains only  alphabets or not? 
+user=input()
+count=0
+for i in user:
+    if i.isdigit():
+        count=count+1
+if count==0:
+    print("The string contains only alphabets")
+else:
+    print("The string does not contains only alphabets")
+        
+
+
+# In[31]:
+
+
+#69. take a string from the user and check contains only  special chars or not? 
+user=input()
+count=0
+counts=0
+for i in user:
+    if i.isdigit():
+        count=count+1
+    elif i.isalpha():
+        counts=counts+1
+if count==0 and counts==0:
+    print("The string contains only special_characters")
+else:
+    print("The string does not contains only special_characters ")
+
+
+# In[34]:
+
+
+#70.take a string from the user and check contains only  capital letters or not? 
+user=input()
+a=user.upper()
+if user==a:
+    print("The string contains only capital letters")
+else:
+    print("The string does not contains only capital letters")
+    
+
+
+# In[37]:
+
+
+#71.take a string from the user and check contains only  small letters or not? 
+user=input()
+a=user.lower()
+if user==a:
+    print("The string contains only small letters")
+else:
+    print("The string does not contains only small letters")
+
+
+# In[38]:
+
+
+#72.WAP to replace last n occurrence. 
+actual_string=input().split()
+source_string=input()
+destination_string=input()
+count=0
+for i in range(len(actual_string)):
+    if source_string==actual_string[i]:
+        count=count+1
+        result=i 
+actual_string[result]=destination_string
+res=""
+for i in actual_string:
+    res=res+i+" "
+print(res)    
+
+
+# In[6]:
+
+
+#73. WAP to check given string contains numbers or not. it should consider float numbers also.
+user=input()
+count=0
+for i in user:
+    if i.isdigit() or (i.count(".")==1):
+        count=count+1
+if count>0:
+    print("string contains numbers and float numbers")
+else:
+    print("string does not contains numbers and float numbers")
+
+
+# In[ ]:
+
+
+#74. Convert the total string in to lower case. 
+#Convert the total string in to upper case. 
+user=input()
+a=user.lower()
+b=user.upper()
+print(f'lower_case:{a}')
+print(f'upper_case:{b}')
+
+
+# In[36]:
+
+
+#75. Convert every word start letter into caps. 
+#Some how title not working if it contains numbers and special symbols in the word 
+user=input()
+count=0
+for i in user:
+    if (not(i.isalpha())):
+        if i==" ":
+            continue
+        count=count+1   
+if count>0:
+    print("Title is not working because it contains numbers or special symbols")
+else:
+    print("Title is working")
+
+
+# In[11]:
+
+
+# 76.replace last two occurrences of given source string with destination string 
+#preserve the delimiter after split.
+actual_string=input().split()
+source_string=input()
+destination_string=input()
+count=0
+a=[]
+result=""
+for i in range(len(actual_string)):
+    if actual_string[i]==source_string:
+        count=count+1
+        a.append(i) 
+res1=a[-1]
+res2=a[-2]
+actual_string[res1]=destination_string 
+actual_string[res2]=destination_string
+for i in actual_string:
+    result=result+i+" "
+print(result)
+       
+
+
+# In[31]:
+
+
+#77.write a program to check given substring is there in actual string or not? (search should be case insensitive) 
+actual_string=input()
+substring=input()
+substring_length=len(substring)
+j=0
+count=0
+for i in actual_string:
+    if i==substring[j]:
+        j=j+1
+        if j==substring_length:
+            break
+if j==substring_length:            
+    print("yes given substring is there in actual string ")
+else:
+    print("yes given substring is not there in actual string ")
+        
+    
+
+
+# In[ ]:
+
+
+#78.example: act="python is a pure object oriented programing language" 
+#check whether “pure” is there in act or not. 
+#Note: Use in operator 
+actual_string=input()
+substring=input()
+substring_length=len(substring)
+j=0
+count=0
+for i in actual_string:
+    if i==substring[j]:
+        j=j+1
+        if j==substring_length:
+            break
+if j==substring_length:            
+    print("yes given substring is there in actual string ")
+else:
+    print("yes given substring is not there in actual string ")
+
+
+# # Data Structures
+
+# In[69]:
+
+
+#79.l=[10,20,30,[40,50,60],70,[80,90,20]].Convert this list as single dimensional list 
+l = [10, 20, 30, [40, 50, 60], 70, [80, 90, 20]]
+result=[]
+for i in l:
+    if type(i)==int:
+        result.append(i)
+    else:
+        result.extend(i)
+print(result)        
+ 
+
+
+# In[1]:
+
+
+#80.input: "Google" print count of each character
+a=input()
+b=set(a)
+for i in b:
+    c=a.count(i)
+    print(i,"=",c)
+
+
+# In[4]:
+
+
+#81.Convert n dimensional list to single dimensional list. 
+l=input().split()
+result=[]
+for i in l:
+    if type(i)==int:
+        result.append(i)
+    else:
+        result.extend(i)
+print(result)
+
+
+# In[6]:
+
+
+#82. l=[1,2,3] just make it as a string.
+l=[1,2,3]
+result=""
+for i in l:
+    result=result+str(i)+" "
+print(result)    
+
+
+# In[7]:
+
+
+#83.l=[1,2,3,[4,5,6],7,[8,9,10]] for single dimensional list
+l=[1,2,3,[4,5,6],7,[8,9,10]]
+result=[]
+for i in l:
+    if type(i)==int:
+        result.append(i)
+    else:
+        result.extend(i)
+print(result)        
+
+
+# In[8]:
+
+
+#84.l=['a','A','b','B','d','D','c','C'] WAP to find out case insensitive count and 
+l=['a','A','b','B','d','D','c','C'] 
+b=set(l)
+for i in b:
+    d=l.count(i)
+    print(str(i)+" "+str(d))
+
+
+# In[10]:
+
+
+#85.case insensitive search for an element. 
+sentence=input().split()
+search_string=input()
+if search_string in sentence:
+    print("True")
+else:
+    print("False")
+
+
+# In[11]:
+
+
+#86. l=['a','A','b','B','d','D','c','C']  sort the list properly 
+l=['a','A','b','B','d','D','c','C']
+l.sort()
+print(l)
+
+
+# In[13]:
+
+
+#87.find the start position of the largest block of repeated characters in a given string
+# a=input()
+# b=list(a)
+# c=set(b)
+# res=[]
+# for i in c:
+#     d=a.count(i)
+#     res.append(d)
+#     e=max(res)
+
+
+# In[17]:
+
+
+#88.WAP to find union and intersection of lists. 
+# a=input().split()
+# b=input().split()
+
+
+# In[18]:
+
+
+#89.input: fun(5) output: [1,2,3,4,3,2,1] 
+
+
+# In[19]:
+
+
+#90.input fun('abc') output: [[],][a],[b],[c],[a,b],[b,c],[c,a],[a,b,c]] 
+
+
+# In[22]:
+
+
+#91.Remove duplicates from the list: a=[1,2,3,2,3,4,1,,3,4] 
+a=input().split()
+b=set(a)
+c=list(b)
+c.sort()
+print(c)
+
+
+# In[23]:
+
+
+#92. l=['1','2','3'] get the sum of the list 
+a=list(map(int,input().split()))
+sum=0
+for i in a:
+    sum=sum+i
+print(sum)    
+
+
+# In[24]:
+
+
+#93. l1=[1,2,3,4] l2=[5,6,7,8] sum of two lists 
+l1=[1,2,3,4]
+l2=[5,6,7,8]
+res=[]
+for i in range(len(l1)):
+    sum=l1[i]+l2[i]
+    res.append(sum)
+print(res)    
+    
+
+
+# In[27]:
+
+
+#94.Find third max value of element in a list with soring and without sorting a list.
+a=input().split()
+a.sort()
+print(a[-3])
+
+
+# In[ ]:
+
+
+
 

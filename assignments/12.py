@@ -1,0 +1,10 @@
+'''Take some groceries cost prices and print total cost and average cost, what is the max cost, what is the minimum cost.'''
+grocerices_cost = list(map(int,input("Enter the cost here : ").split(',')))
+total_cost = sum(grocerices_cost)
+Average_cost = total_cost/len(grocerices_cost)
+maxi = max(grocerices_cost)
+mini = min(grocerices_cost)
+print(total_cost)
+print(Average_cost)
+print(maxi)
+print(mini)

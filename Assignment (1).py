@@ -1993,7 +1993,7 @@ else:
 import json
 with open("employee.data","r") as f:
     data=[json.loads(i) for i in f]
-print(data)
+print("the data is=",data)
 
 
 # In[ ]:

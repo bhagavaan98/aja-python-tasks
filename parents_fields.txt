@@ -1,0 +1,51 @@
+
+
+CharField - Field
+
+DateField - DateTimeCheckMixin, Field
+
+DateTimeField - DateField
+
+DecimalField - Field
+
+DurationField - Field
+
+EmailField - CharField
+
+FilePathField - Field
+
+FloatField - Field
+
+IntegerField - Field
+
+BigIntegerField - IntegerField
+
+SmallIntegerField - IntegerField
+
+GenericIPAddressField - Field
+
+IPAddressField - Field
+
+NullBooleanField - BooleanField
+
+PositiveSmallIntegerField - PositiveInteferRealDbMixin, SmallIntergerField
+
+PositiveBigIntegerField - PositiveIntegerRelDbTypeMixin, BigIntegerField
+
+PositiveIntegerField - PositiveIntegerRelDbTypeMixin, IntegerField
+
+SlugField - CharField
+
+TextField - Field
+
+URLField - CharField
+
+BinaryField - Field
+
+UUIDField - Field
+
+SmallAutoField - AutoFieldMixin, SmallIntegerField
+
+BigAutoField - AutoFieldMixin, BigIntegerField
+
+AutoField - AutoFieldMixin, IntegerField

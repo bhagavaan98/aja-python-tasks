@@ -1,0 +1,53 @@
+The commands (n, b, c, s, l, w, u, q, quit) are commonly associated with the Python Debugger (PDB), which is a built-in interactive debugger for Python. 
+
+
+1) n (next):
+
+Execute the current line of code and stop at the next line in the current function.
+
+
+2) b (break):
+
+Set a breakpoint at the current line or a specified line number. Execution will pause when the breakpoint is reached.
+
+
+3) c (continue):
+
+Continue execution until the next breakpoint is encountered or the program finishes.
+
+
+4) s (step into):
+
+Execute the current line of code. If the line contains a function call, enter the function and stop at the first line.
+
+
+5) l (list):
+
+Show the source code around the current line. By default, it shows 11 lines centered around the current line.
+
+
+6) l with start and end line:
+
+You can specify the start and end line numbers to display a specific range of source code lines.
+
+python
+Copy code
+l 10, 20
+w (where):
+
+Display a stack trace showing the current position in the call stack.
+
+
+7) u (up):
+
+Move up one level in the call stack.
+
+
+8) q (quit):
+
+Quit the debugger and terminate the program.
+
+
+9) quit:
+
+Another way to exit the debugger.
